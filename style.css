@@ -251,6 +251,7 @@ header .cal-button:hover {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
+  background: radial-gradient(#11111135, transparent 75%);
 }
 
 .hidden {
