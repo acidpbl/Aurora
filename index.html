@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="weather.js" defer></script>
+    <title>Aurora</title>
+  </head>
+  <body>
+    <div class="cards">
+      <div class="card calendar theme-light">
+        <p class="card-title">Calendar</p>
+        <header>
+          <span id="prev" class="cal-button"><</span>
+          <p class="current-month">May 2023</p>
+          <span id="next" class="cal-button">></span>
+        </header>
+        <div class="calendar-wrapper">
+          <ul class="weeks">
+            <li id="sunday">Sun</li>
+            <li id="monday">Mon</li>
+            <li id="tuesday">Tue</li>
+            <li id="wednesday">Wed</li>
+            <li id="thursday">Thu</li>
+            <li id="friday">Fri</li>
+            <li id="saturday">Sat</li>
+          </ul>
+          <ul class="days"></ul>
+        </div>
+      </div>
+      <div class="card clock theme-light">
+        <p class="card-title">Clock</p>
+        <div class="clock-wrapper">
+          <div class="bg-clock">
+            <span id="now"></span>
+          </div>
+          <span id="week-day"></span>
+          <span id="today"></span>
+        </div>
+      </div>
+      <div class="card weather theme-light">
+        <p class="card-title">Weather</p>
+        <div class="input-weather">
+          <input id="value" class="city" type="text" placeholder="City" />
+          <button id="input">Search</button>
+        </div>
+        <div class="weather-response">
+          <p class="temp"></p>
+          <p class="humidity"></p>
+          <p class="pressure"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

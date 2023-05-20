@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #b49fdf;
+}
+
+.cards {
+  display: flex;
+  gap: 2.5rem;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 25rem;
+  height: 25rem;
+  background-color: #e8ecf1;
+  border-radius: 20%;
+
+  filter: drop-shadow(-1px 1px 3.2px #1111111c);
+}
+
+.card .card-title {
+  padding: 1.5rem 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.card.calendar {
+  height: 28rem;
+  border-radius: 15%;
+}
+
+.calendar-wrapper {
+  padding: 25px 40px;
+}
+
+.calendar-wrapper .days {
+  margin-left: -2px;
+}
+
+.calendar-wrapper .weeks li {
+  font-weight: 500;
+}
+
+.calendar-wrapper .days li {
+  cursor: pointer;
+}
+
+.calendar header {
+  display: flex;
+  gap: 0rem;
+  justify-content: space-between;
+  font-weight: bold;
+  width: calc(25rem - 6rem);
+}
+
+header .current-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+header .cal-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b49fdf5c;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.5rem;
+  border-radius: 20%;
+}
+
+header .cal-button:hover {
+  background: #b49fdf;
+  cursor: pointer;
+}
+
+.calendar-wrapper ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.calendar-wrapper ul li {
+  width: calc(100% / 7);
+}
+
+.calendar-wrapper .days li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5.5px;
+  margin-top: 5.5px;
+
+  height: 40px;
+  width: 40px;
+
+  border-radius: 50%;
+}
+
+.calendar-wrapper .days li:hover {
+  background: #b49fdf5c;
+}
+
+.days li.inactive {
+  color: #888;
+}
+
+.days li.active {
+  background: #5417cf;
+  color: #e8ecf1;
+}
+
+.days li.active:hover {
+  background: #2f0d73;
+  color: #eee;
+}
+
+.weeks li.active {
+  color: #5417cf;
+  filter: drop-shadow(0 0 2px #0c022111);
+}
+
+.clock-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.8rem;
+}
+
+.clock-wrapper .bg-clock {
+  padding: 0 2rem;
+  background: #b49fdf5c;
+  border-radius: 28px;
+}
+
+.clock-wrapper span#now {
+  font-size: 6rem;
+  font-weight: 500;
+}
+
+.clock-wrapper span#week-day {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #999;
+}
+
+.clock-wrapper span#today {
+  margin-top: 0.1rem;
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #999;
+}
+
+.input-weather {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.input-weather .city {
+  width: 12.5rem;
+  border-radius: 12px 0 0 12px;
+  border: none;
+  background: #b49fdf5c;
+  padding: 1rem;
+}
+
+.input-weather .city::placeholder {
+  color: #2f0d73;
+}
+
+.input-weather .city:focus::placeholder {
+  color: #111;
+}
+
+.input-weather #input {
+  border-radius: 0 12px 12px 0;
+  border: none;
+  background: #5417cf;
+  color: #e8ecf1;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.input-weather #input:hover {
+  background: #2f0d73;
+  color: #ccc;
+}
+
+.input-weather .city:focus {
+  outline: none;
+}
+
+.input-weather:focus-within {
+  outline: 4px solid #5417cf;
+  border-radius: 12px;
+}
+
+.weather-response {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.weather-response .temp {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.weather-response .humidity {
+  color: #999;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.weather-response .pressure {
+  color: #999;
+  font-size: 2rem;
+  font-weight: 500;
+}
