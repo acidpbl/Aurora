@@ -5,25 +5,39 @@ const input = document.querySelector(".city"),
 
 const weather_api = "1de936f2905693fdd1d19b7aa8bbc257";
 
+function validateInt(value) {
+  if (value.trim().length) {
+    return true;
+  }
+  return false;
+}
 async function makeAPICall() {
   const city = document.getElementById("value").value;
 
-  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weather_api}&units=metric`;
-  const result = await fetch(URL);
-  result.json().then((data) => {
-    const main = data.main;
-    const tempFull = main.temp.toString();
-    const temp = tempFull.split(".")[0];
+  if (validateInt(city)) {
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weather_api}&units=metric`;
+    const result = await fetch(URL);
+    result.json().then((data) => {
+      const main = data.main;
+      const tempFull = main.temp.toString();
+      const temp = tempFull.split(".")[0];
 
-    const hum = main.humidity;
-    const press = main.pressure;
+      const hum = main.humidity;
+      const press = main.pressure;
 
-    temperature.textContent = `${temp}°`;
-    humidity.textContent = `Humidity: ${hum}%`;
-    pressure.textContent = `Pressure: ${press}hPa`;
-  });
+      temperature.textContent = `${temp}°`;
+      humidity.textContent = `Humidity: ${hum}%`;
+      pressure.textContent = `Pressure: ${press}hPa`;
+    });
+  }
 }
 
 document.getElementById("input").onclick = function () {
   makeAPICall();
 };
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    makeAPICall();
+  }
+});
