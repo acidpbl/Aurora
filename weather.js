@@ -1,5 +1,6 @@
 const input = document.querySelector(".city"),
   temperature = document.querySelector(".temp"),
+  icon = document.querySelector(".weather-icon"),
   humidity = document.querySelector(".humidity"),
   pressure = document.querySelector(".pressure");
 
@@ -11,6 +12,9 @@ function validateInt(value) {
   }
   return false;
 }
+
+if (!icon.src) icon.classList.add("hidden");
+
 async function makeAPICall() {
   const city = document.getElementById("value").value;
 
@@ -21,6 +25,13 @@ async function makeAPICall() {
       const main = data.main;
       const tempFull = main.temp.toString();
       const temp = tempFull.split(".")[0];
+
+      const iconURL = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
+      console.log(iconURL);
+
+      icon.src = iconURL;
+
+      if (icon.src == iconURL) icon.classList.remove("hidden");
 
       const hum = main.humidity;
       const press = main.pressure;

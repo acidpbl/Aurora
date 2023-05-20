@@ -172,7 +172,7 @@ header .cal-button:hover {
 
 .input-weather {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .input-weather .city {
@@ -219,10 +219,10 @@ header .cal-button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
-.weather-response .temp {
+.weather-response .temp-wrapper .temp {
   font-size: 4rem;
   font-weight: 500;
 }
@@ -237,4 +237,26 @@ header .cal-button:hover {
   color: #999;
   font-size: 2rem;
   font-weight: 500;
+}
+
+.weather-response .temp-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.weather-response .temp-wrapper .weather-icon {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+}
+
+.hidden {
+  display: none;
+}
+
+.card.weather {
+  height: 28rem;
 }
