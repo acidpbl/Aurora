@@ -126,7 +126,9 @@ const clock = setInterval(function time() {
 
   weekDay.textContent = dateToday.toLocaleDateString("en", { weekday: "long" });
 
-  today.textContent = `${dateToday.getDate()} ${months[currMonth]}, ${currYear}`;
+  today.textContent = `${dateToday.getDate()} ${
+    months[new Date().getMonth()]
+  }, ${new Date().getFullYear()}`;
 
   hourNow.textContent = `${hour}:${min}`;
 });
